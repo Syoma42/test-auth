@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <form [formGroup]="myForm" (keyup.enter)="onSubmitForm()">
+    <div class="row">
+      <label for="login">Login</label>
+      <input id="login" type="text" formControlName="login" />
+      <span [ngClass]="{ invalid: isSubmitted && login.invalid }">{{
+        getValidationMessage("login")
+      }}</span>
+    </div>
+
+    <div class="row">
+      <label for="pass">Password</label>
+      <input id="pass" type="password" formControlName="password" />
+      <span [ngClass]="{ invalid: isSubmitted && password.invalid }">{{
+        getValidationMessage("password")
+      }}</span>
+    </div>
+  </form>
+
+  <button (click)="onSubmitForm()" [disabled]="myForm.invalid && isSubmitted">
+    Submit
+  </button>
+</div>

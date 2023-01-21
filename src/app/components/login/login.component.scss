@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 15px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    .row {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        visibility: hidden;
+        height: 15px;
+
+        &.invalid {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  button {
+    align-self: flex-end;
+    width: 30%;
+  }
+}
